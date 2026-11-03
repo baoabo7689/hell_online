@@ -1,0 +1,369 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0505;
+  --text: #f5e6d3;
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.btn-underworld {
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(180deg, #b91c1c, #7f1d1d);
+  color: #fff7ed;
+  font-weight: 600;
+  border: 1px solid #f97316;
+  box-shadow: 0 0 18px rgba(249, 115, 22, 0.35);
+  transition:
+    transform 0.15s,
+    box-shadow 0.2s;
+}
+
+.btn-underworld:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 28px rgba(249, 115, 22, 0.6);
+}
+
+.btn-underworld:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-ghost {
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(245, 230, 211, 0.35);
+  color: #f5e6d3;
+  transition: background 0.2s;
+}
+
+.btn-ghost:hover {
+  background: rgba(245, 230, 211, 0.1);
+}
+
+.btn-heaven {
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(180deg, #fde68a, #f59e0b);
+  color: #422006;
+  font-weight: 700;
+  box-shadow: 0 0 24px rgba(253, 230, 138, 0.7);
+}
+
+.btn-heaven:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.speech-bubble {
+  position: relative;
+  background: rgba(10, 5, 5, 0.75);
+  border: 1px solid rgba(249, 115, 22, 0.5);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.speech-bubble-light {
+  background: rgba(255, 255, 255, 0.85);
+  color: #422006;
+  border-color: rgba(245, 158, 11, 0.6);
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(249, 115, 22, 0.8));
+  }
+  50% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 22px rgba(239, 68, 68, 0.9));
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(0.4);
+    opacity: 0;
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(30px);
+    opacity: 0;
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+@keyframes shake-light {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-1px, 1px);
+  }
+  75% {
+    transform: translate(1px, -1px);
+  }
+}
+
+@keyframes shake-medium {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+  25% {
+    transform: translate(-3px, 2px) rotate(-0.4deg);
+  }
+  75% {
+    transform: translate(3px, -2px) rotate(0.4deg);
+  }
+}
+
+@keyframes shake-heavy {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+  20% {
+    transform: translate(-7px, 4px) rotate(-1deg);
+  }
+  40% {
+    transform: translate(6px, -5px) rotate(1deg);
+  }
+  60% {
+    transform: translate(-5px, -3px) rotate(-0.6deg);
+  }
+  80% {
+    transform: translate(7px, 5px) rotate(0.8deg);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes walk-in-left {
+  from {
+    transform: translateX(-60vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes walk-in-right {
+  from {
+    transform: translateX(60vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes spin-wheel {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1440deg);
+  }
+}
+
+@keyframes zap {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@keyframes sneak {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  70% {
+    transform: translateX(120px);
+    opacity: 0.9;
+  }
+  80% {
+    transform: translateX(130px) scale(1.3);
+    opacity: 1;
+    filter: brightness(3);
+  }
+  100% {
+    transform: translateX(130px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes memory-fade {
+  to {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(-20px);
+  }
+}
+
+.animate-flicker {
+  animation: flicker 1.6s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+.animate-walk-in-left {
+  animation: walk-in-left 1.6s ease-out both;
+}
+
+.animate-walk-in-right {
+  animation: walk-in-right 1.6s ease-out both;
+}
+
+.animate-spin-wheel {
+  animation: spin-wheel 2.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.animate-zap {
+  animation: zap 0.6s ease-out both;
+}
+
+.animate-sneak {
+  animation: sneak 2.4s ease-in both;
+}
+
+.animate-memory-fade {
+  animation: memory-fade 1.8s ease-in forwards;
+}
+
+.shake-0 {
+  animation: shake-light 0.5s linear infinite;
+}
+
+.shake-1 {
+  animation: shake-medium 0.3s linear infinite;
+}
+
+.shake-2 {
+  animation: shake-heavy 0.18s linear infinite;
+}
+
+.particle-embers,
+.particle-sparks {
+  animation-name: rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.particle-snow,
+.particle-drops {
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.particle-mist {
+  animation-name: drift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shake-0,
+  .shake-1,
+  .shake-2,
+  .particle-embers,
+  .particle-sparks,
+  .particle-snow,
+  .particle-drops,
+  .particle-mist,
+  .animate-flicker,
+  .animate-float {
+    animation: none;
+  }
+}
